@@ -2,19 +2,6 @@
 #include <math.h>
 #include "point.h"
 
-int find_shortest_distance_index(double distances[], int length)
-{
-  int index = 0;
-  for (int i = 1; i < length; i++)
-  {
-    if(distances[i] < distances[index])
-    {
-      index = i;
-    }
-  }
-  return index;
-}
-
 int square(int num)
 {
   return num * num;
@@ -29,12 +16,15 @@ double find_distance_between(Point A, Point B)
 
 Point get_closest_food(Point food_points[], Point current_location, int size)
 {
-  double distances[size];
-  for (int index = 0; index < size; index++)
+  Point closest_food = food_points[0];
+  for (int index = 1; index < size; index++)
   {
-    distances[index] = find_distance_between(food_points[index], current_location);
+    double distance1 = find_distance_between(closest_food, current_location);
+    double distance2 = find_distance_between(food_points[index], current_location);
+    if(distance2 < distance1)
+    {
+      closest_food = food_points[index];
+    }
   }
-  int position = find_shortest_distance_index(distances, size);
-  return food_points[position];
+  return closest_food;
 }
-

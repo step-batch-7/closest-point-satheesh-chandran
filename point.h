@@ -26,4 +26,3 @@ typedef struct
 double find_distance_between(Point, Point);
 int square(int);
 Point get_closest_food(Point [], Point, int);
-int find_shortest_distance_index(double [], int);
