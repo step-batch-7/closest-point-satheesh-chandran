@@ -13,6 +13,8 @@ Location of organism: [10 94],  Closest food target : [18 76]
 Location of organism: [36 27],  Closest food target : [55 38]
 */
 
+// void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location);
+
 #define FOOD_POINTS {{18, 76}, {19, 66}, {89, 57}, {9 ,71}, {55, 38}};
 
 typedef struct 
@@ -21,9 +23,7 @@ typedef struct
   int y;
 } Point;
 
-// void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location);
-
-double find_distance_between(Point A, Point B);
+double find_distance_between(Point, Point);
 int square(int);
-Point get_closest_food(Point food_points[], Point current_location, int size);
-int find_shortest_distance_index(double distances[], int size);
+Point get_closest_food(Point [], Point, int);
+int find_shortest_distance_index(double [], int);
