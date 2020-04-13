@@ -2,7 +2,7 @@
 #include <math.h>
 #include "point.h"
 
-int find_shortest_distance_index(double distances[5], int length)
+int find_shortest_distance_index(double distances[], int length)
 {
   int index = 0;
   for (int i = 1; i < length; i++)
