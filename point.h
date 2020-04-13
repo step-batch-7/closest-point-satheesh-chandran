@@ -18,4 +18,10 @@ struct Point
   int y;
 } ;
 
-void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location);
+// void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location);
+// void get_closest_food(struct Point , struct Point );
+
+double find_distance_between(struct Point A, struct Point B);
+int square(int);
+struct Point get_closest_food(struct Point food_points[], struct Point current_location);
+int find_shortest_distance_index(double distances[5]);
